@@ -1,0 +1,41 @@
+GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzA4NTE3MjQ2LCJleHAiOjE3MDg1MjA4NDYsImF1ZCI6IjY1ZDVhZGZhZWZkYTYxYWQ1YTk3MTdmNiIsImlzcyI6InBpY2t1cnBhZ2UuY29tIn0.K0bZoOD-bfDqm5ZjhcsLE0li-JFAqB9Mc_H7jWaINPw
+
+### Register
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "test22@gmail.com",
+    "password": "hello123",
+    "phone": "+987625543210", 
+    "name": "Test User"
+}
+
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "password": "hello123",
+    "email": "test2@gmail.com"
+}
+### Refresh Token
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDg1MTcwNDgsImV4cCI6MTc0MDA3NDY0OCwiYXVkIjoiNjVkNTk0ZTdmMjkyZDFjNjhjYTUyZDUxIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.D0WNxuxZt2IL_cDjdVVbV4egS3FXUkNo-D1waoNFgdg"
+}
+
+### Logout
+GET  http://localhost:3000/admin/users
+
+
+### Logout
+POST  http://localhost:3000/admin/notification
+Content-Type: application/json
+
+{
+   
+}
