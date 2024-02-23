@@ -19,12 +19,10 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", verifyAccessToken, ClientRoute);
-
+app.use("/auth", AuthRoute);
 app.use("/subadmin", verifySubAdminAccessToken, SubAdminRoute);
 app.use("/admin", verifyAdminAccessToken, AdminRoute);
-
-app.use("/auth", AuthRoute);
+app.use("/", verifyAccessToken, ClientRoute);
 
 app.use(async (req, res, next) => {
   next(createError.NotFound());
