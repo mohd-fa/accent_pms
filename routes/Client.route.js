@@ -6,3 +6,5 @@ const ClientController = require("../controllers/client_controller");
 router.post("/bookService", ClientController.bookService);
 
 router.post("/bookPackage", ClientController.bookPackage);
+
+module.exports = router;
