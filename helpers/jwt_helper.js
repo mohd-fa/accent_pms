@@ -66,7 +66,7 @@ module.exports = {
           err.name === "JsonWebTokenError" ? "Unauthorized" : err.message;
         return next(createError.Unauthorized(message));
       }
-      if (payload.role !== "subadmin" || payload.role !== "admin") {
+      if (payload.role !== "subadmin" && payload.role !== "admin") {
         return next(createError.Forbidden("Forbidden"));
       }
       req.payload = payload;

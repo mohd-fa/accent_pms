@@ -13,12 +13,12 @@ Content-Type: application/json
 }
 
 ### Login
-POST https://accent-pms.onrender.com/auth/login
+POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
     "password": "hello123",
-    "email": "test2@gmail.com"
+    "email": "test@gmail.com"
 }
 ### Refresh Token
 POST http://localhost:3000/auth/refresh-token
@@ -29,7 +29,9 @@ Content-Type: application/json
 }
 
 ### Logout
-GET  http://localhost:3000/admin/users
+GET  http://localhost:3000/subadmin/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDg3MDg0NTQsImV4cCI6MTcwODcxMjA1NCwiYXVkIjoiNjVkNTk0ZTdmMjkyZDFjNjhjYTUyZDUxIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.SlManf-a88QC5cN3U94gM8lcP0AQDtIiSf8vNbKmxvU
 
 
 ### Logout

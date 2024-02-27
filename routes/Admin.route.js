@@ -20,4 +20,21 @@ router.post("/package", AdminController.createPackage);
 
 router.post("/banner", AdminController.createBanner);
 
+router.put("/notification", AdminController.updateNotification);
+
+router.put("/service", AdminController.updateService);
+
+router.put("/package", AdminController.updatePackage);
+
+router.put("/banner", AdminController.updateBanner);
+
+router.delete("/notification", AdminController.deleteNotification);
+
+router.delete("/service", AdminController.deleteService);
+
+router.delete("/package", AdminController.deletePackage);
+
+router.delete("/banner", AdminController.deleteBanner);
+
+
 module.exports = router;

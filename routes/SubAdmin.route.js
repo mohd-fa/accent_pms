@@ -8,4 +8,9 @@ router.get("/users", SubAdminController.getUsers);
 
 router.post("/user", SubAdminController.createUser);
 
+router.put("/user", SubAdminController.updateUser);
+
+router.delete("/user", SubAdminController.deleteUser);
+
+
 module.exports = router;

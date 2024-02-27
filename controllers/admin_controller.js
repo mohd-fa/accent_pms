@@ -4,14 +4,6 @@ const Service = require("../models/Service.model");
 const Banner = require("../models/Banners.model");
 
 module.exports = {
-  getUsers: async (req, res, next) => {
-    try {
-      const users = await User.find({ role: "client" }, "phone email name");
-      res.json({ users });
-    } catch (error) {
-      next(error);
-    }
-  },
   getNotifications: async (req, res, next) => {
     try {
       const notifications = await Notification.find();
@@ -76,6 +68,89 @@ module.exports = {
       const banner = new Banner(req.body);
       const savedBanner = await banner.save();
       res.json({ savedBanner });
+    } catch (error) {
+      next(error);
+    }
+  },
+  updatePackage: async (req, res, next) => {
+    try {
+      const updatedPackage = await Package.findByIdAndUpdate(
+        req.body.id,
+        req.body,
+        { new: true }
+      );
+      res.json({ updatedPackage });
+    } catch (error) {
+      next(error);
+    }
+  },
+  updateService: async (req, res, next) => {
+    try {
+      const updatedService = await Service.findByIdAndUpdate(
+        req.body.id,
+        req.body,
+        { new: true }
+      );
+      res.json({ updatedService });
+    } catch (error) {
+      next(error);
+    }
+  },
+  updateNotification: async (req, res, next) => {
+    try {
+      const updatedNotification = await Notification.findByIdAndUpdate(
+        req.body.id,
+        req.body,
+        { new: true }
+      );
+      res.json({ updatedNotification });
+    } catch (error) {
+      next(error);
+    }
+  },
+  updateBanner: async (req, res, next) => {
+    try {
+      const updatedBanner = await Banner.findByIdAndUpdate(
+        req.body.id,
+        req.body,
+        { new: true }
+      );
+      res.json({ updatedBanner });
+    } catch (error) {
+      next(error);
+    }
+  },
+  deletePackage: async (req, res, next) => {
+    try {
+      const deletedPackage = await Package.findByIdAndDelete(req.body.id);
+      res.json({ deletedPackage });
+    } catch (error) {
+      next(error);
+    }
+  },
+  deleteService: async (req, res, next) => {
+    try {
+      const deletedService = await Service.findById;
+      AndDelete(req.body.id);
+      res.json({ deletedService });
+    } catch (error) {
+      next(error);
+    }
+  },
+  deleteNotification: async (req, res, next) => {
+    try {
+      const deletedNotification = await Notification.findByIdAndDelete(
+        req.body.id
+      );
+      res.json({ deletedNotification });
+    } catch (error) {
+      next(error);
+    }
+  },
+  deleteBanner: async (req, res, next) => {
+    try {
+      const deletedBanner = await Banner.findByIdAndDelete(req.body.id);
+      res.json({ deletedBanner });
     } catch (error) {
       next(error);
     }
